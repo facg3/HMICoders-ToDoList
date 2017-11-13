@@ -1,0 +1,21 @@
+body{
+ text-align:left;
+ background: #789789 ;
+    border: 1px solid black;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+    background-color: ;
+}
+
+
+   ul li input[type="checkbox"]:checked + label{
+
+  padding-bottom: 2px;
+  color:#C0C0C0;
+  text-decoration: line-through;
+
+}
+
+    margin : 50 px ;
