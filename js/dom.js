@@ -50,7 +50,7 @@
   };
 
   // bind create todo form
-  console.log(addTodoForm);
+
   if (addTodoForm) {
     addTodoForm.addEventListener('submit', function(event) {
       // https://developer.mozilla.org/en-US/docs/Web/Events/submit
