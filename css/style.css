@@ -5,9 +5,8 @@ body{
 }
 
 h1{
-    margin-bottom: 0px;
+    margin: 0;
     font-size: 6em;
-    padding-bottom: 0px;
 }
 
 .container{
@@ -18,65 +17,77 @@ h1{
            rgba(248, 25, 25, 0.59)),
     url(./background.jpg);
   background-size: cover;
-  min-height: 1600px;
+  height: 100vh;
+  overflow: hidden;
 }
 .inside-container{
-  padding-top: 40%;
-  font-size: 20px;
+  font-size: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 15vh;
 }
 
 input.text{
-      width: 20em;
-      height: 3em;
-      border-radius: 36px;
+      width: 40%;
+      height: 30px;
+      border-radius: 3px;
       border-color: #8392ba;
-      margin: 1em;
-      font-size: 2em;
-      visibility: 77px;
+      margin-right: 2px;
+      font-size: 1.2em;
       color: black;
       text-align: center;
+      box-sizing: border-box;
 }
 
 input.submit{
-    height: 3.2em;
-    width: 6em;
-    border-radius: 60px;
-    background-color: indigo;
-    color: blanchedalmond;
-    font-size: 30px;
+  height: 30px;
+  width: 15%;
+  border-radius: 6px;
+  background-color: indigo;
+  color: blanchedalmond;
+  font-size: 1.2em;
+}
+form#add-todo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 .inside-container ul{
-  list-style-type: none;
-  padding-left: 0;
+  width: 55%;
+  margin: 1px auto;
+  padding: 0;
+  overflow-y: auto;
+  max-height: 70vh;
 }
 .inside-container ul li{
   width: 100%;
-  height: 1.5em;
-  border: 1px solid red;
-  padding: 0.5em;
+  height: 40px;
+  border-bottom: 1px solid #fff;
   color:#fff;
   margin-bottom: 2px;
   display: flex;
+  margin-bottom: 5px;
 
 }
 .inside-container ul li span{
   flex:1;
   text-align: center;
+  font-size: 2.0em;
+  line-height: 40px;
 }
 .inside-container ul li button{
-  width: 20%;
-  height: 30px;
   color: #fff;
   border: 1px solid #000;
-  background-color: #f22613;
+  background-color: #82544f;
   border-radius: 5px;
-  outline-style: none;
-  margin-right: 3px;
-
+  margin-right: 5px;
+  margin-bottom: 3px;
 }
 
 .inside-container ul li button:last-child{
   background-color: #00aa55;
+
 }
 .line-through{
   text-decoration: line-through;
@@ -85,48 +96,3 @@ input.submit{
   background-color: #333333;
 }
 /*text-decoration: line-through;*/
-
-@media screen and (max-height: 653px){
-  .container{
-    text-align: center;
-    background-image:
-      linear-gradient(rgba(255, 235, 59, 0.36),
-             rgba(248, 25, 25, 0.59)),
-      url(./background.jpg);
-    background-size: cover;
-    min-height: 653px;
-  }
-  h1{
-    font-size: 35px;
-  }
-  .inside-container{
-    padding-top: 2px;
-    float: right;
-    margin-top: 8%;
-    margin-right: 25%;
-    margin-left: 25%;
-    position: initial;
-  }
-
-  input.text{
-        width: 20em;
-        height: 3em;
-        border-radius: 10px;
-        border-color: #8392ba;
-        margin: 1em;
-        font-size: 15px;
-        visibility: 77px;
-        color: black;
-        text-align: center;
-  }
-
-  input.submit{
-        height: 3em;
-        width: 6em;
-        border-radius: 15px;
-        background-color: indigo;
-        color: blanchedalmond;
-        font-size: 14px;
-  }
-
-}
