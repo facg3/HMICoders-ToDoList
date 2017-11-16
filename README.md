@@ -1,35 +1,55 @@
 # HMICoders-ToDoList
-Our to do list
-The project
 
-User stories:
+## Who are we :
+- Hanan Qwaider .
+- Dalal Saleem .
+- Ismail AlSaleh.
+- Mahmoud Hmaid .
 
-As a disorganised person I want to:
 
-enter tasks I need to do into a web page so that I don't forget them
-view the tasks I have added in a list so that I can plan my day
-mark tasks as complete so that I can focus on the tasks I have left
-the to-dos to be large enough so that I don't hit the wrong one with my thumb
-Potential stretch goals
+# What is TDD?
 
-As a disorganised person I want to:
+Test-driven development is a programming methodology with which one can tackle the design, implementation, and testing of units of code, and to some extent the expected functionality of a program.
 
-edit my to-dos so that I can amend them if the task changes
-click on any part of a to-do to mark it as complete so that it's easier for me to check to-dos off
-a visual indication of which to-do I'm about to interact with so that it's clear what I'm editing
-Part one: create some pure functions
+## How we work ?
+in our time we work Pair programming , we divide the function 3 functions , 2 take 2 function and 2 take the one function ,and switch between pairs to make test for every function .
 
-For the first part of the project you will be creating three functions using TDD. You do not need to understand the rest of the code to complete this. The three functions can be thought of in isolation to the rest of the project.
+## The files in our project:-
+logic.js     : functions .
 
-These functions are in the todoFunctions object in logic.js
+test.js      : test for the functions in logic.js.
 
-What is a to-do array? What is a to-do?
+dom.js       :access and change all the elements of an HTML document.
 
-We will represent a todo as an object with three properties:
-What does generateId do?
+style.css    : To give our project a nice form .
 
-You do not need to understand this function. Each time you call generateId it will give you a unique number!
+index.html   : To write a paragraph and tittle .
 
-What does cloneArrayOfObjects do?
 
-Makes a copy of your array of objects, so that if you make changes to the new array or its objects, the originial remains unchanged.
+## Our-work :
+-  Hanan and Dalal make a add function and Test for other pairs function and Do the Style for the project by CSS .
+
+-  Mahmoud and Ismail make delete and mark function and test our added function .
+  and Do define the function inside the Dom file to create complete function .
+
+  We hava taken in our project the issue of Accessibility and mobile first .
+
+## Our-Stories:
+
+   * As a busy person  you  can now :
+
+- Enter tasks you need to do into a web page so you will never forget them.
+
+- View the tasks you have added in a list .
+
+- Mark tasks as complete so you can focus on the tasks that's have't done .
+
+- Delete the task that's you dont want it .
+
+
+## What we doing :
+- We Create  pure functions(add && delete && mark ).
+- We Use the TDD functions to build the app .
+- We Try to make it look pretty using CSS .
+- We create To do Node .
+- We Create new todoaddTodoForm.addEventListener('submit', function(event) {} .
