@@ -53,6 +53,7 @@ ul li input[type="checkbox"]:checked + label{
 
 }
 
+
 @media screen and (max-height: 653px){
   .container{
     text-align: center;
