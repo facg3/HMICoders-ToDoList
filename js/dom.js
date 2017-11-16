@@ -27,23 +27,30 @@
     todoNode.appendChild(todoSpan);
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
+    var buttonName2 = document.createTextNode("Delete");
+    deleteButtonNode.appendChild(buttonName2);
+    todoNode.appendChild(deleteButtonNode);
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
     });
-    todoNode.appendChild(deleteButtonNode);
+
 
     // add markTodo button
-    var markTodoButton = document.createElement('input');
-    markTodoButton.setAttribute("type","button");
-    todoNode.appendChild(markTodoButton);
-    // add classes for css
-    todoNode.classList.add("class")
+    var markTodoButton = document.createElement('button');
+    var buttonName = document.createTextNode("Done");
+    markTodoButton.appendChild(buttonName);
+     todoNode.appendChild(markTodoButton);
+    //add classes for css
+    if(todo.done){
+        todoSpan.classList.add("line-through");
+        todoNode.classList.add("list-item-color");
+    }
     return todoNode;
   };
 
   // bind create todo form
-  console.log(addTodoForm);
+
   if (addTodoForm) {
     addTodoForm.addEventListener('submit', function(event) {
       // https://developer.mozilla.org/en-US/docs/Web/Events/submit
@@ -52,8 +59,14 @@
       event.preventDefault();
       var description = event.target.description.value; // event.target ....
       // hint: todoFunctions.addTodo
+      if(description===""){
+            alert("Please add your task description")
+          }
+          else{
       var newState =todoFunctions.addTodo(state,description); // ?? change this!
       update(newState);
+     event.target.description.value="";
+       }
     });
   }
 
