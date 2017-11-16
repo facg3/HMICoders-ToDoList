@@ -28,8 +28,14 @@ var todoFunctions = {
     // returns a new array, it should contain todos with the newTodo added to the end.
     // add an id to the newTodo. You can use the generateId function to create an id.
     // hint: array.concat
-    var newArr = todoFunctions.cloneArrayOfObjects(todo);
-    newArr.push(newTodo);
+    var ids = todoFunctions.generateId();
+    var task = {
+      id:ids,
+      description:newTodo,
+      done:false
+    }
+    var newArr = todoFunctions.cloneArrayOfObjects(todos);
+    newArr.push(task);
     return newArr;
   },
   deleteTodo: function(todos, idToDelete) {
