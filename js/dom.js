@@ -35,7 +35,7 @@
 
     // add markTodo button
     var markTodoButton = document.createElement('input');
-    markTodoButton.setAttribute("type","checkbox");
+    markTodoButton.setAttribute("type","button");
     todoNode.appendChild(markTodoButton);
     // add classes for css
     todoNode.classList.add("class")
