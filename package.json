@@ -17,7 +17,9 @@
     "url": "https://github.com/facg3/HMICoders-ToDoList/issues"
   },
   "homepage": "https://github.com/facg3/HMICoders-ToDoList#readme",
-  "dependencies": {},
+  "dependencies": {
+    "tap": "^10.7.3"
+  },
   "devDependencies": {
     "tap-spec": "^4.1.1",
     "tape": "^4.8.0"
