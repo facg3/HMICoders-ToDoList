@@ -1,27 +1,61 @@
 // Part 1. Fill in any missing parts of the todoFunction object!
 // you can access these on todo.todoFunctions
 // For part one we expect you to use tdd
-
 var todoFunctions = {
-  // todoFunctions.generateId() will give you a unique id
-  // You do not need to understand the implementation of this function.
-  generateId: (function() {
-    var idCounter = 0;
+// todoFunctions.generateId() will give you a unique id
+// You do not need to understand the implementation of this function.
+generateId: (function() {
+var idCounter = 0;
+function incrementCounter() {
+  return (idCounter += 1);
+}
 
-    function incrementCounter() {
-      return (idCounter += 1);
-    }
+return incrementCounter;
+})(),
+//cloneArrayOfObjects will create a copy of the todos array
+//changes to the new array don't affect the original
+cloneArrayOfObjects: function(todos) {
+return todos.map(function(todo){
+return JSON.parse(JSON.stringify(todo));
+});
+},
+addTodo: function(todos, newTodo) {
+var ids = todoFunctions.generateId();
+var task = {
+id:ids,
+description:newTodo,
+done:false,
+}
+var newArr = todoFunctions.cloneArrayOfObjects(todos);
+newArr.push(task);
+return newArr;
+},
+deleteTodo: function(todos, idToDelete) {
+// should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
+// return a new array, this should not contain any todo with an id of idToDelete
+// hint: array.filter
+var newArr = todoFunctions.cloneArrayOfObjects(todos);
+var Arr = newArr.filter(function(item){
+return item.id != idToDelete;
+});
+return Arr;
+},
 
-    return incrementCounter;
-  })(),
-
-  //cloneArrayOfObjects will create a copy of the todos array
-  //changes to the new array don't affect the original
-  cloneArrayOfObjects: function(todos) {
-    return todos.map(function(todo){
-      return JSON.parse(JSON.stringify(todo));
-    });
-  },
+markTodo: function(todos, idToMark) {
+// should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
+// in the new todo array, all elements will remain unchanged except the one with id: idToMark
+// this element will have its done value toggled
+// hint: array.map
+var newArr = todoFunctions.cloneArrayOfObjects(todos);
+var Arr = newArr.map(function(i){
+if( i.id == idToMark){
+i.done === true ? i.done = false : i.done = true;
+}
+return i;
+}
+);
+return Arr;
+},
 
   addTodo: function(todos, newTodo) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
@@ -69,13 +103,12 @@ var todoFunctions = {
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
   },
+
 };
-
-
 // Why is this if statement necessary?
 // The answer has something to do with needing to run code both in the browser and in Node.js
 // See this article for more details:
 // http://www.matteoagosti.com/blog/2013/02/24/writing-javascript-modules-for-both-browser-and-node/
 if (typeof module !== 'undefined') {
-  module.exports = todoFunctions;
+module.exports = todoFunctions;
 }
