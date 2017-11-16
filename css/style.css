@@ -1,16 +1,51 @@
 body{
- text-align:left;
- background: #789789 ;
-    border: 1px solid black;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    margin-right: 150px;
-    margin-left: 80px;
-    background-color: ;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
 }
 
+h1{
+    margin-bottom: 0px;
+    font-size: 6em;
+    padding-bottom: 0px;
+}
 
-   ul li input[type="checkbox"]:checked + label{
+.container{
+  text-align: center;
+  background-image:
+    linear-gradient(rgba(255, 235, 59, 0.36),
+           rgba(248, 25, 25, 0.59)),
+    url(./background.jpg);
+  background-size: cover;
+  min-height: 1600px;
+}
+.inside-container{
+  padding-top: 40%;
+  font-size: 20px;
+}
+
+input.text{
+      width: 20em;
+      height: 3em;
+      border-radius: 36px;
+      border-color: #8392ba;
+      margin: 1em;
+      font-size: 2em;
+      visibility: 77px;
+      color: black;
+      text-align: center;
+}
+
+input.submit{
+    height: 3.2em;
+    width: 6em;
+    border-radius: 60px;
+    background-color: indigo;
+    color: blanchedalmond;
+    font-size: 30px;
+}
+
+ul li input[type="checkbox"]:checked + label{
 
   padding-bottom: 2px;
   color:#C0C0C0;
@@ -18,4 +53,48 @@ body{
 
 }
 
-  
+
+@media screen and (max-height: 653px){
+  .container{
+    text-align: center;
+    background-image:
+      linear-gradient(rgba(255, 235, 59, 0.36),
+             rgba(248, 25, 25, 0.59)),
+      url(./background.jpg);
+    background-size: cover;
+    min-height: 653px;
+  }
+  h1{
+    font-size: 35px;
+  }
+  .inside-container{
+    padding-top: 2px;
+    float: right;
+    margin-top: 8%;
+    margin-right: 25%;
+    margin-left: 25%;
+    position: initial;
+  }
+
+  input.text{
+        width: 20em;
+        height: 3em;
+        border-radius: 10px;
+        border-color: #8392ba;
+        margin: 1em;
+        font-size: 15px;
+        visibility: 77px;
+        color: black;
+        text-align: center;
+  }
+
+  input.submit{
+        height: 3em;
+        width: 6em;
+        border-radius: 15px;
+        background-color: indigo;
+        color: blanchedalmond;
+        font-size: 14px;
+  }
+
+}

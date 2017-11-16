@@ -3,17 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>tdd todo</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
-    <div id = "todo-container">
-        <ul>
-        </ul>
+    <div class="container">
+      <div class="inside-container">
+        <h1>ToDo List</h1>
+        <div id = "todo-container">
+            <ul>
+            </ul>
+        </div>
+        <form id="add-todo">
+          <input class="text" type="text" name="description" value="">
+          <input class="submit" type="submit" name="" value="Submit">
+        </form>
+      </div>
     </div>
-    <form id="add-todo">
-      <input type="text" name="description" value="">
-      <input type="submit" name="" value="Submit">
-    </form>
   </body>
   <script type="text/javascript" src = "js/logic.js"></script>
   <script type="text/javascript" src = "js/dom.js"></script>
