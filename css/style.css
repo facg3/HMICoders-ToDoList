@@ -59,6 +59,7 @@ form#add-todo{
   padding: 0;
   overflow-y: auto;
   max-height: 65vh;
+
 }
 .inside-container ul li{
   width: 100%;

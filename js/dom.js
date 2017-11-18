@@ -6,21 +6,28 @@
   var container = document.getElementById('todo-container');
   var addTodoForm = document.getElementById('add-todo');
 
-  var state = [
-    { id: -3, description: 'first todo' },
-    { id: -2, description: 'second todo' },
-    { id: -1, description: 'third todo' },
-  ]; // this is our initial todoList
+  var state = [{
+      id: -3,
+      description: 'first todo'
+    },
+    {
+      id: -2,
+      description: 'second todo'
+    },
+    {
+      id: -1,
+      description: 'third todo'
+    },
+  ];
 
-  // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
     var todoNode = document.createElement('li');
-    // you will need to use addEventListener
-     todoNode.addEventListener('click',function(){
-      var markState = todoFunctions.markTodo(state,todo.id);
-      update(markState);
-     });
-  //  add span holding description
+    todoNode.addEventListener('click', function() {
+      var markState = todoFunctions.markTodo(state, todo.id);
+      var newSortedState = todoFunctions.sortTodos(markState);
+      update(newSortedState);
+    });
+    //  add span holding description
     var todoSpan = document.createElement('span');
     var todoDisc = document.createTextNode(todo.description);
     todoSpan.appendChild(todoDisc);
@@ -32,7 +39,8 @@
     todoNode.appendChild(deleteButtonNode);
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
-      update(newState);
+      var newSortedState = todoFunctions.sortTodos(newState);
+      update(newSortedState);
     });
 
 
@@ -40,33 +48,28 @@
     var markTodoButton = document.createElement('button');
     var buttonName = document.createTextNode("Done");
     markTodoButton.appendChild(buttonName);
-     todoNode.appendChild(markTodoButton);
+    todoNode.appendChild(markTodoButton);
     //add classes for css
-    if(todo.done){
-        todoSpan.classList.add("line-through");
-        todoNode.classList.add("list-item-color");
+    if (todo.done) {
+      todoSpan.classList.add("line-through");
+      todoNode.classList.add("list-item-color");
     }
     return todoNode;
   };
 
-  // bind create todo form
-
   if (addTodoForm) {
     addTodoForm.addEventListener('submit', function(event) {
-      // https://developer.mozilla.org/en-US/docs/Web/Events/submit
-      // what does event.preventDefault do?
-      // what is inside event.target?
+
       event.preventDefault();
-      var description = event.target.description.value; // event.target ....
-      // hint: todoFunctions.addTodo
-      if(description===""){
-            alert("Please add your task description")
-          }
-          else{
-      var newState =todoFunctions.addTodo(state,description); // ?? change this!
-      update(newState);
-     event.target.description.value="";
-       }
+      var description = event.target.description.value;
+      if (!(/^[^-\s][\w\s-]+$/.test(description))) {
+        alert("Please add your task description")
+      } else {
+        var newState = todoFunctions.addTodo(state, description);
+        var newSortedState = todoFunctions.sortTodos(newState);
+        update(newSortedState);
+        event.target.description.value = "";
+      }
     });
   }
 

@@ -53,3 +53,59 @@ index.html   : To write a paragraph and tittle .
 - We Try to make it look pretty using CSS .
 - We create To do Node .
 - We Create new todoaddTodoForm.addEventListener('submit', function(event) {} .
+
+## Callback function
+
+A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
+## Example:
+
+function greeting(name) {
+alert('Hello ' + name);
+}
+
+function processUserInput(callback) {
+var name = prompt('Please enter your name.');
+callback(name);
+}
+
+processUserInput(greeting)
+
+The above example is a synchronous callback, as it is executed immediately.
+
+Note however that callbacks are often used to continue code execution after an asynchronous operation has completed — these are called asynchronous callbacks.
+
+
+## The importance of pure functions in testing :
+
+-They’re easier to reason about
+
+-They’re easier to combine
+
+-They’re easier to test
+
+-They’re easier to debug
+
+-They’re easier to parallelize
+
+
+## Ping pong code in pairs :
+
+PairProgramming works in my team like :
+
+-A writes a new test and sees that it fails.
+
+-B implements the code needed to pass the test.
+
+-B writes the next test and sees that it fails.
+
+-A implements the code needed to pass the test.
+
+
+## The difference between unit & integration tests:
+
+A unit test is a test written by the programmer to verify that a relatively small piece of code is doing what it is intended to do. They are narrow in scope, they should be easy to write and execute, and their effectiveness depends on what the programmer considers to be useful.
+
+But
+
+An integration test is done to demonstrate that different pieces of the system work together. Integration tests cover whole applications, and they require much more effort to put together. They usually require resources like database instances and hardware to be allocated for them.
+_
