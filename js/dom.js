@@ -6,20 +6,8 @@
   var container = document.getElementById('todo-container');
   var addTodoForm = document.getElementById('add-todo');
 
-  var state = [{
-      id: -3,
-      description: 'first todo'
-    },
-    {
-      id: -2,
-      description: 'second todo'
-    },
-    {
-      id: -1,
-      description: 'third todo'
-    },
-  ];
-
+  var state = [];
+  var newSortedState = todoFunctions.sortTodos(state);
   var createTodoNode = function(todo) {
     var todoNode = document.createElement('li');
     todoNode.addEventListener('click', function() {
